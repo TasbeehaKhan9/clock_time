@@ -4,19 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+</head>
     <style>
 
-    </style>
-</head>
-<body>
+#back-image{
+background-image: url(https://www.kayak.com/rimg/dimg/dynamic/19/2024/02/362583ac2994e67f2f8aff29b4bafd8c.webp);
+background-size: cover;
+height: 100vh;
+  
+   
+}
+
+
+
+
+h1{
+    color: white;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 40%;
+    text-shadow:2px 7px 7px black;
+    font-size: 70px;
+  
+  
+ 
+}
+    h1:hover {
+      color: #ffffff;
+      text-shadow: 0 0 15px hsl(0, 0%, 0%);
+    }
+#clock{
+    color: white;
+ display: flex;
+    justify-content: center;
+    font-size: xx-large;
+    font-weight: 800;
+     position: relative;
+    top: 40%;
+        font-size: 70px;
+        text-shadow: 0 0 15px black;
     
+}
 
 
 
-
-
+    </style>
+<body>
+    <div class="main-container">
+<div id="back-image">
+<h1>Your Current Time</h1>
+<div id="clock"></div>
+</div>
+</div>
     <script>
-        
+
+
+function updateClock() {
+    var now = new Date();
+   var hours = String(now.getHours()).padStart(2,"0");
+   var minutes = String(now.getMinutes()).padStart(2,"0");
+   var seconds = String(now.getSeconds()).padStart(2, "0");
+
+   document.getElementById("clock").innerText =`${hours}:${minutes}:${seconds}`;
+}
+
+setInterval(updateClock,1000)
+updateClock()
+
+
     </script>
 </body>
 </html>
